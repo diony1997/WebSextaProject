@@ -1,0 +1,74 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07/04/2019, 15:48:29
+    Author     : Diony
+*/
+
+body {
+    background-image: url("../imagens/bg.jpg");
+    background-repeat: no-repeat;
+}
+
+.container{
+    margin-top:50px;
+    margin-left:0px;
+}
+h2{
+    margin-left: 20px;
+    text-align: center;
+}
+.divTable{
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 2px;
+    margin-top:80px;
+    margin-right: 50px;
+    display:table;
+    height: 300px;
+    width: 320px;
+    background-color: whitesmoke;
+}
+#tabelas{
+    width: 42%;
+    float: left;
+    margin-left:50px;
+
+}
+#tabelas2{
+    width: 38%;
+    float: right;
+    text-align: center;
+}
+#perfil{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    height: 400px;
+}
+#foto{
+    display: block;
+    margin-left: 60px;
+    width: 240px;
+    height:184px;
+}
+input[type=text]{
+    width: 92%;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+#editUser{
+    border-radius: 8px;
+    margin-top: 40px;
+    margin-left: 200px;
+
+}
+#editUserContainer{
+    width: 40%;
+    margin-top:40px;
+    margin-right: auto;
+    margin-left: auto;
+}
