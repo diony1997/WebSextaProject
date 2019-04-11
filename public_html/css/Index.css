@@ -1,0 +1,19 @@
+.singInInput{
+    margin-right: 8pt;
+}
+
+.title{
+	color:whitesmoke;
+	font-size: 80px;
+}
+
+.description{
+	margin-top:50px;
+	color:whitesmoke;
+}
+
+.text_pic_left{
+	margin-top:50px;
+	width: 80%;
+	height: 70%;
+}
