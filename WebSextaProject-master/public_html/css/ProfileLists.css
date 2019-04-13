@@ -1,0 +1,32 @@
+.divTable{
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 2px;
+    margin-top:20px;
+    margin-right: 50px;
+    display:table;
+    height: 80px;
+    width: 320px;
+    background-color: whitesmoke;
+}
+
+.tabelas_left{
+    width: 42%;
+    float: left;
+    margin-left:50px;
+}
+
+.tabelas_right{
+    width: 38%;
+    float: right;
+    text-align: center;
+}
+
+.table_title{
+    margin-left: 20px;
+    text-align: center;
+}
+
+fieldset {
+    border:0 none;
+ }

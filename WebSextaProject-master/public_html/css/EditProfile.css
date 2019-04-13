@@ -1,0 +1,26 @@
+.photo{
+    display: block;
+    margin-left: 60px;
+    width: 240px;
+    height:184px;
+}
+
+.alter{
+    width: 92%;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.editUser{
+    border-radius: 8px;
+    margin-top: 40px;
+    margin-left: 200px;
+
+}
+
+.editUserContainer{
+    width: 40%;
+    margin-top:40px;
+    margin-right: auto;
+    margin-left: auto;
+}
