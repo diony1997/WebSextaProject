@@ -4,12 +4,12 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 07/04/2019, 15:48:29
+    Created on : 14/04/2019, 17:29:52
     Author     : Diony
 */
-
-body {
-    background-image: url("../imagens/bg.jpg");
+#preview{
+    margin-left: 150px;
+    height: 240px;
+    width: 150px;
 }
-
 
