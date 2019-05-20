@@ -36,7 +36,7 @@
 								<span class="navbar-brand" style="color:whitesmoke;font-weight:bold">Sit amet</span>
 							</div>
 							<div class="nav navbar-nav navbar-right">
-								<form class="form-inline">
+								<form class="form-inline" method="post" action="/login.php">
 									<input class="nav-item singInInput" type="email" placeholder="Email" name="email" />
 									<input class="nav-item singInInput" type="password" placeholder="Password" name="password"/>
 									<button type="button" class="btn btn-outline-success">Login</button>

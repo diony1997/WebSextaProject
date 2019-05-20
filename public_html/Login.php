@@ -1,39 +1,27 @@
 <?php
 
- $conn = mysqli_connect("localhost", "root", "", "BDNAME");
- 
+ require_once  'OperacoesBanco.php';
+
+  $bd = new OperacoesBanco();
  
   if($_SERVER['REQUEST_METHOD']=='POST')
   {
-		if (!$conn) {
-			die();
-		}
-		else{
-		
-            FindUser();
-        } 
-		   
+	 if($bd != null)	
+		FindUser();
+	 else
+		Header('location: index.php');
   }
     
 	function FindUser(){
 		
-		$sql = "SELECT * FROM Users Where Email = " . $_POST["email"] . " AND Password = " . $_POST["password"];
-		$result = $conn->query($sql);
-
-		if ($result->num_rows > 0){
-			
-			 $_SESSION['username'] = $_POST['username']; // store username
-			 $_SESSION['password'] = $_POST['password']; // store password
-			
-			Header('location: EditProfile.html');
-			//Redirect(); //Redirect to user page.
-		}
-		else{
-			
-			Header('location: index.html');
-			//Redirect(); //Redirect to index.html
-		}
+		$user = $bd->login($_POST['email'], $_POST['password'])
 		
+		if ($user != null){	
+			 $_SESSION['username'] = $user['email']; // store username
+			 $_SESSION['id'] = $user['id'];
+			 $_SESSION['picurl'] = $user['imagemURL'];
+		}
+		Header('location: index.php');	
 	}
 		
 ?>
