@@ -29,8 +29,6 @@
 						</div>'
                 );
             } else {
-
-
                 echo (
                 '<div class="navbar-left">
 								<span class="navbar-brand" style="color:whitesmoke;font-weight:bold">Sit amet</span>
