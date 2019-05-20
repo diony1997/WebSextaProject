@@ -1,0 +1,1 @@
+Para criar o banco-> incie o MySql no XAMPP -> abra a pagina CriarBanco.php no navegador pelo localhost/.../criarBanco.php

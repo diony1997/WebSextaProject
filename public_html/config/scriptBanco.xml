@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<data>
+	<databaseName>bdaps</databaseName>
+		<table>
+			<name>usuario</name>
+			<script>
+				create table Usuario(
+					id int primary key auto_increment,
+					nome varchar(30) not null,
+					email varchar(100) not null unique,
+					senha varchar(60) not null,
+					imagemURL varchar(255) default 'imagens/padrao.png'
+				)
+			</script>
+		</table>
+</data>
