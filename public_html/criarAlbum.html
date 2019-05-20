@@ -39,19 +39,19 @@
                         <img id="preview" src="imagens/cardBack.jpg" alt="Figurinha"/>
                     </div>
                     <div> 
-                        <button type="button" class="btn btn-info btn-sm">Procurar imagem</button>
-                    </div>
-                </div>
-                <div class="w3-row w3-section">
-                    <div class="w3-rest">
-                        <p>foto1.jpg
-                        <p>foto2.jpg
-                        <p>foto3.jpg
+                        <input type="file" name="myFile" accept="image/*" multiple onchange="loadFile(event)">
                     </div>
                 </div>
                 <button type="button" href="#" class="w3-button w3-block w3-section w3-green w3-ripple w3-padding">Criar</button>
                 <a class="w3-button w3-block w3-section w3-red w3-ripple w3-padding" href="ProfileLists.html" >Cancelar</a>
             </form>
         </div>
+        <script>
+           //carrega a previa da imagem
+           var loadFile = function (event) {
+                var output = document.getElementById('preview');
+                output.src = URL.createObjectURL(event.target.files[0]);
+            }; 
+        </script>
     </body>
 </html>
