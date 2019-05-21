@@ -14,22 +14,22 @@ class OperacoesBanco {
     }
     
     function inserirUser($obj) {
-        $sql = "INSERT INTO usuario(nome, email, senha, imagemURL) VALUES(?, ?, ?, ?)";
+        $sql = "INSERT INTO user (nome, email, senha, imageURL) VALUES(?, ?, ?, ?)";
         
         //tratamento do sql injection
         $stm = mysqli_prepare($this->linkDB->con, $sql);
         
         if(!$stm) {
-            return false;
+            die('Falha na construcao SQL');
         }
         
         $nome = $obj->getNome();
         $email = $obj->getEmail();
-        $senha = md5($obj->getSenha());
+        $senha = $obj->getSenha();
         $imagem = $obj->getImagemURL();
                 
         if(!$stm->bind_param("ssss", $nome, $email, $senha, $imagem)) {
-            return false;
+            die('Falha na atribuicao de valores');
         }
         
         return $stm->execute();       
@@ -74,20 +74,34 @@ class OperacoesBanco {
     
     function login($email, $senha){
         
-        $newSenha = md5($senha);
-        $resultado = mysqli_query($this->linkDB->con, "SELECT * FROM usuario WHERE email = '".$email."' AND senha = '".$newSenha."'");
+        $resultado = mysqli_prepare($this->linkDB->con, "SELECT * FROM user WHERE email = ? AND senha = ?");
         
-        if ($resultado && mysqli_num_rows($resultado) == 1){
-            $dados = mysqli_fetch_assoc($resultado);
-            $user = Array('email' => $dados['email'], 'imagemURL' => $dados['imagemURL'],'nome' => $dados['nome'], 'id' => $dados['id']);
-            return $user;
-        }else{
-            return null;
+        if (!$resultado) {
+            die('Falha na construcao SQL');
         }
+        
+        if (!$resultado->bind_param("ss", $email, $senha)) {
+            die('Falha na atribuicao de valores');
+        }
+        
+          if (!$resultado->execute()) {
+            die('Falha na execucao SQL');
+        }
+        
+        $result = $resultado->get_result();
+            
+        if ($result->num_rows ===  1){
+            $dados = mysqli_fetch_assoc($result);
+            $user = Array('email' => $dados['email'], 'imageURL' => $dados['imageURL'],'nome' => $dados['nome'], 'id' => $dados['id']);
+            return $user;
+        } 
+        
+        return null;
+        
     }
     
     function deleteUser($id){
-        $resultado = mysqli_query($this->linkDB->con, "DELETE FROM usuario WHERE id = ".$id);
+        $resultado = mysqli_query($this->linkDB->con, "DELETE FROM user WHERE id = ".$id);
         return $resultado;
     }
     

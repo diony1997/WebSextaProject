@@ -11,8 +11,10 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
             <?php
-            session_start();
-            if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+            if (isset($_SESSION['id'])) {
                 echo(
                 '<div class="navbar-left">
 							<a class="navbar-brand" href="EditProfile.html">
@@ -34,10 +36,10 @@
 								<span class="navbar-brand" style="color:whitesmoke;font-weight:bold">Sit amet</span>
 							</div>
 							<div class="nav navbar-nav navbar-right">
-								<form class="form-inline" method="post" action="/login.php">
+								<form class="form-inline" method="post" action="./Login.php">
 									<input class="nav-item singInInput" type="email" placeholder="Email" name="email" />
 									<input class="nav-item singInInput" type="password" placeholder="Password" name="password"/>
-									<button type="button" class="btn btn-outline-success">Login</button>
+									<button type="submit" class="btn btn-outline-success">Login</button>
 								</form>
 								<a class="nav-item nav-link" href="AddProfile.html">Criar Conta</a>
 							</div>'
