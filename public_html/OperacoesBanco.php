@@ -68,7 +68,7 @@ class OperacoesBanco {
 
     function update($id, $campo, $valor) {
 
-        $resultado = mysqli_prepare($this->linkDB->con, "UPDATE user SET ? = ? WHERE ID = ?");
+        $resultado = mysqli_prepare($this->linkDB->con, "UPDATE user SET ? = ? WHERE id = ?");
 
         //tratamento do sql injection
         if (!$resultado) {
