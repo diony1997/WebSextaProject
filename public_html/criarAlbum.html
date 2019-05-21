@@ -35,22 +35,29 @@
                     </div>
                 </div>
                 <div class="w3-row w3-section">
-                    <div class="w3-rest">
-                        <img id="preview" src="imagens/cardBack.jpg" alt="Figurinha"/>
-                    </div>
+                    <ul id="images" class="w3-rest">
+
+                    </ul>
                     <div> 
-                        <input type="file" name="myFile" accept="image/*" multiple onchange="loadFile(event)">
+                        <input id="webURL"  name="image" />
+						<input type="button" onclick="adicionar()"/>
                     </div>
                 </div>
-                <button type="button" href="#" class="w3-button w3-block w3-section w3-green w3-ripple w3-padding">Criar</button>
+                <button type="submit" href="#" class="w3-button w3-block w3-section w3-green w3-ripple w3-padding">Criar</button>
                 <a class="w3-button w3-block w3-section w3-red w3-ripple w3-padding" href="ProfileLists.html" >Cancelar</a>
             </form>
         </div>
         <script>
            //carrega a previa da imagem
-           var loadFile = function (event) {
-                var output = document.getElementById('preview');
-                output.src = URL.createObjectURL(event.target.files[0]);
+             function adicionar() {
+                var myList = document.getElementById("images");
+                var url = document.getElementById("webURL").value;
+                var node = document.createElement("LI"); 
+                var img = new Image();
+				
+				img.src = url;				
+                node.appendChild(img);
+                myList.appendChild(node);
             }; 
         </script>
     </body>
