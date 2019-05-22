@@ -23,7 +23,7 @@
           $sessao = unserialize($_SESSION['user']);
        ?>
         <div class="container editUserContainer">
-            <form action="/action_page.php" class="w3-container w3-card-4 w3-light-grey w3-text-black w3-margin editUser">
+            <form action="gerenciaSala.php?acao=solicita" method="post" class="w3-container w3-card-4 w3-light-grey w3-text-black w3-margin editUser">
                 <h2 class="w3-center">Enviar Pedido</h2>
                 <div class="w3-row w3-section">
                     <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
@@ -32,8 +32,8 @@
                     </div>
                 </div>
 
-                <button type="button" href="#" class="w3-button w3-block w3-section w3-green w3-ripple w3-padding">Enviar</button>
-                <a class="w3-button w3-block w3-section w3-red w3-ripple w3-padding" href="ProfileLists.html" >Cancelar</a>
+                <button type="submit" href="#" class="w3-button w3-block w3-section w3-green w3-ripple w3-padding">Enviar</button>
+                <a class="w3-button w3-block w3-section w3-red w3-ripple w3-padding" href="index.php" >Cancelar</a>
             </form>
         </div>
     </body>

@@ -18,8 +18,9 @@
                 <div class="nav navbar-nav navbar-right">
                     <a class="nav-item nav-link" href="index.php">Home</a>
                     <a class="nav-item nav-link" href="criarSala.php">Criar Sala</a>
-                    <a class="nav-item nav-link" href="criarAlbum.html">Criar Álbum</a>
-                    <a class="nav-item nav-link" href="joinSala.html">Entrar em Sala</a>
+                    <a class="nav-item nav-link" href="criarSala.php">Salas</a>
+                    <a class="nav-item nav-link" href="criarAlbum.php">Criar Álbum</a>
+                    <a class="nav-item nav-link" href="joinSala.php">Entrar em Sala</a>
                     <a  href="respLogin.php?acao=sair" class="btn btn-outline-danger">Log Out</a>
                 </div>
                <?php

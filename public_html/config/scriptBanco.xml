@@ -13,4 +13,27 @@
 				)
 			</script>
 		</table>
+		<table>
+			<name>sala</name>
+			<script>
+				create table Sala( 
+					id int primary key auto_increment, 
+					nome varchar(30) not null unique, 
+					idCriador int not null, 
+					FOREIGN KEY(idCriador) REFERENCES usuario(id) 
+					)
+			</script>
+		</table>
+		<table>
+			<name>UserSala</usersala>
+			<script>
+			CREATE TABLE UserSala( 
+				idUser int not null, 
+				FOREIGN KEY(idUser) REFERENCES usuario(id), 
+				idSala int not null, 
+				FOREIGN KEY(idSala) REFERENCES sala(id), 
+				aprovado bool 
+			)
+			</script>
+		</table>
 </data>

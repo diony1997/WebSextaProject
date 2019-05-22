@@ -35,7 +35,7 @@
             $objcli->setImagemURL($_POST['imagem']);
         }
         
-        if($banco->itemExiste('email', $objcli->getEmail())){
+        if($banco->itemExiste('email', $objcli->getEmail(), 'usuario')){
             $titulo = '99';
             $mensagem = '1';
         }else{

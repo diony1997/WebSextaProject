@@ -5,10 +5,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Criar Sala</title>
+        <link rel="stylesheet" href="css/w3.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/Base.css"/>
-	<link rel="stylesheet" href="css/w3.css">
-	<link rel="stylesheet" type="text/css" href="css/ProfileLists.css"/>
+        <link rel="stylesheet" type="text/css" href="css/EditProfile.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <?php 
@@ -21,56 +22,17 @@
           }
           $sessao = unserialize($_SESSION['user']);
        ?>
-        <fieldset>
-        <div id="tabelas" class="divTable tabelas_left">
-            <a href="#"><h2 class="table_title">Nome da sala</h2> 
-                <br> <center>Quantidade de participantes:</center></a>
-        </div>     
-        <div id="tabelas" class="divTable tabelas_right">
-                <table  class="table table-striped">
-                <tbody>
-                    <tr>
-                        <td><button type="button" class="btn btn-info btn-lg btn-block">Editar pontuação</button></td>
-                        <td><button type="button" class="btn btn-info btn-lg btn-block">Excluir sala</button></td>
-                    </tr>
-                    <tr>
-                        <td><button type="button" class="btn btn-info btn-lg btn-block">Editar sala</button></td>
-                        <td><button type="button" class="btn btn-info btn-lg btn-block">Sair</button></td>
-                    </tr>
-                </tbody>
-                </table>
-            </div>       
-        </fieldset>
-
-
-        <div id="tabelas" class="divTable tabelas_left">
-            <a href="#"><h2 class="table_title">Scoreboard</h2></a>
-            <table  class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Coleção</th>
-                        <th>Nome Usuário</th>
-                        <th>Pontos</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Coleção #</td>
-                        <td>User 1</td>
-                        <td>84</td>
-                    </tr>
-                    <tr>
-                        <td>Coleção #</td>
-                        <td>User 2</td>
-                        <td>43</td>
-                    </tr>
-                    <tr>
-                        <td>Coleção #</td>
-                        <td>User 3</td>
-                        <td>62</td>
-                    </tr>
-                </tbody>
-            </table>
+        
+        <div class="container editUserContainer">
+            <form action="gerenciaSala.php?acao=cad" method="post" class="w3-container w3-card-4 w3-light-grey w3-text-black w3-margin editUser">
+                <h2 class="w3-center">Criar Sala</h2>
+                <div class="w3-row w3-section">
+                    <div class="w3-rest">
+                        <input class="w3-input w3-border alter" name="nome" id="nome" type="text" placeholder="Nome da sala" maxlength="30" required >
+                    </div>
+                </div>
+                <button  type="submit"  value="Submit" name="submit" class="w3-button w3-block w3-section w3-green w3-ripple w3-padding">Criar</button>
+            </form>
         </div>
     
         <!-- End your code here -->

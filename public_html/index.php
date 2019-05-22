@@ -7,47 +7,42 @@
         <title>Home</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/Index.css"/>
+         <link rel="stylesheet" href="css/w3.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/Base.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
-            <?php
-            if (session_status() == PHP_SESSION_NONE) {
-                session_start();
+        
+        <?php 
+       
+        if (!empty($_GET["msg"])){
+            $msg = $_GET["msg"];
+                switch ($msg){
+                    case '1':
+                        $msg = "Informações inseridas não são validas";
+                        break;    
+                    case '2':
+                        $msg = "Insira seu login e senha para entrar";
+                        break;
+                    case '3':
+                        $msg = "Você foi desconectado com sucesso!";
+                        break;
+                    default:
+                        $msg = null;
+                        break;
+                }   
+                if ($msg!=null){
+                echo '<script>alert("'.$msg.'");</script>';
+                }
             }
-            if (isset($_SESSION['id'])) {
-                echo(
-                '<div class="navbar-left">
-							<a class="navbar-brand" href="EditProfile.html">
-								<label class="navbar-brand" style="color:whitesmoke;font-weight:bold">' . $_SESSION['username'] . '</label>'
-                . '<img src="' . $_SESSION['picurl'] . '" width="60" height="46" class="w3-circle" />
-							</a>
-						</div>
-						<div class="nav navbar-nav navbar-right">
-							<a class="nav-item nav-link" href="criaSala.html">Criar Sala</a>
-							<a class="nav-item nav-link" href="criarAlbum.html">Criar Álbum</a>
-							<a class="nav-item nav-link" href="joinSala.html">Entrar em Sala</a>
-							<a href="index.php
-                                                        " class="btn btn-outline-danger " >Log Out</a>
-						</div>'
-                );
-            } else {
-                echo (
-                '<div class="navbar-left">
-								<span class="navbar-brand" style="color:whitesmoke;font-weight:bold">Sit amet</span>
-							</div>
-							<div class="nav navbar-nav navbar-right">
-								<form class="form-inline" method="post" action="./Login.php">
-									<input class="nav-item singInInput" type="email" placeholder="Email" name="email" />
-									<input class="nav-item singInInput" type="password" placeholder="Password" name="password"/>
-									<button type="submit" class="btn btn-outline-success">Login</button>
-								</form>
-								<a class="nav-item nav-link" href="AddProfile.html">Criar Conta</a>
-							</div>'
-                );
-            }
-            ?>      
-        </nav>
-
+            
+        //Importação do header
+        include 'util/header.php'; 
+        
+        ?>
+      
         <div class="text-center">
             <h1 class="title"> Sit amet </h1>
         </div>
@@ -95,5 +90,6 @@
                 </div>
             </div>
         </div>
+        
     </body>
 </html>

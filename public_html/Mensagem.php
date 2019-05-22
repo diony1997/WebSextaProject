@@ -57,6 +57,18 @@
                 case '6':
                     $mensagem = 'Nenhuma alteração foi feita';
                     break;
+                case '7':
+                    $mensagem = 'Sala criada com sucesso!';
+                    break;
+                 case '8':
+                    $mensagem = 'Sala já existe';
+                    break;
+                case '9':
+                    $mensagem = 'Sala não existe';
+                    break;
+                case '10':
+                    $mensagem = 'A solicitação foi enviada!';
+                    break;
                  case '007':
                     $mensagem = 'Você não tem permissão para entrar nesta pagina';
                     break;
