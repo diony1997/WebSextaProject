@@ -1,0 +1,10 @@
+Para criar o banco:
+1- inicie o mysql no xampp
+2- Abra a pagina CriarBanco.php no navegador pelo localhost/pastax/CriarBanco.php
+
+
+Tirar arquivos:
+-todos com o .html
+-login.php
+-AddProfile.php
+-EditProfile_confirm.php
