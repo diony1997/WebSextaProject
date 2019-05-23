@@ -15,7 +15,7 @@ class DataSource {
         mysqli_close($this->con);
     }
     
-    function __get($name) {
+    function __get() {
         return $this->con;
     }
 
