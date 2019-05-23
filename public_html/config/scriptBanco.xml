@@ -25,7 +25,7 @@
 			</script>
 		</table>
 		<table>
-			<name>UserSala</usersala>
+			<name>UserSala</name>
 			<script>
 			CREATE TABLE UserSala( 
 				idUser int not null, 
@@ -36,4 +36,25 @@
 			)
 			</script>
 		</table>
+		<table>
+			<name>album</name>
+			<script>
+			CREATE TABLE album(
+				id INT PRIMARY KEY auto_increment,
+				userId INT FOREIGN KEY REFERENCES usuario(id) NOT NULL,
+				nome varchar(30) unique not null
+			)
+			</script>
+		</table
+		<table>
+			<name>image</name>
+			<script>
+				CREATE TABLE image(
+					imageURL VARCHAR(60) NOT NULL,
+					id INT PRIMARY KEY auto_increment,
+					userId INT FOREIGN KEY REFERENCES usuario(id) NOT NULL,
+					albumId INT FOREIGN KEY REFERENCES usuario(id) NOT NULL
+				)
+			</script>
+		</table
 </data>
