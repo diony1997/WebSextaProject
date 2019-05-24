@@ -45,7 +45,7 @@
 				nome varchar(30) unique not null
 			)
 			</script>
-		</table
+		</table>
 		<table>
 			<name>image</name>
 			<script>
@@ -56,5 +56,5 @@
 					albumId INT FOREIGN KEY REFERENCES usuario(id) NOT NULL
 				)
 			</script>
-		</table
+		</table>
 </data>
